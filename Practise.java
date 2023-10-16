@@ -16,26 +16,23 @@ public class Practise {
             System.out.println(e.getMessage());
         }
 
-        System.out.println();
         System.out.println("=======================================================");
-        System.out.println();
 
         String str = "5\n10\n20\n12\n33";
         try {
             FileWriter fileWriter = new FileWriter(file ); // We added to the existing file by typing true
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            
+
             bufferedWriter.write(str);
 
             bufferedWriter.close();
+            fileWriter.close();
 
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
 
-        System.out.println();
         System.out.println("=======================================================");
-        System.out.println();
 
         int sum = 0;
         try {
@@ -48,6 +45,9 @@ public class Practise {
                 sum+=(Integer.parseInt(line));
             }
             System.out.println(sum);
+
+            fileReader.close();
+            bufferedReader.close();
 
         }catch (Exception e){
             System.out.println(e.getMessage());
